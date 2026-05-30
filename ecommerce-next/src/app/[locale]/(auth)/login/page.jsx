@@ -1,10 +1,13 @@
 import Link from "next/link";
 
-import GoogleLoginButton from "../../../../components/auth/google-login-button";
+import SocialLoginButton from "../../../../components/auth/social-login-button";
+import { enabledAuthProviders } from "../../../../lib/auth";
 
 export default async function LoginPage({ params }) {
   const { locale } = await params;
   const callbackUrl = `/${locale}/Home`;
+  const hasAnySocialProvider =
+    enabledAuthProviders.facebook || enabledAuthProviders.google;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,#fff8dc_0%,#f5efe1_45%,#ebe2d1_100%)] px-6 py-16">
@@ -20,8 +23,8 @@ export default async function LoginPage({ params }) {
                 Welcome back to your storefront.
               </h1>
               <p className="mt-4 max-w-md text-sm leading-6 text-white/80">
-                Sign in with Google to manage orders, products, and customers in
-                the {` ${locale.toUpperCase()} `}workspace.
+                Sign in with Facebook or Google to manage orders, products, and
+                customers in the {` ${locale.toUpperCase()} `}workspace.
               </p>
             </div>
             <div className="mt-10 rounded-3xl border border-white/15 bg-white/10 p-5">
@@ -29,8 +32,8 @@ export default async function LoginPage({ params }) {
                 Fast access, no password reset loops.
               </p>
               <p className="mt-2 text-sm leading-6 text-white/70">
-                We&apos;ll send you through Google&apos;s secure sign-in and bring
-                you right back to the app.
+                We&apos;ll send you through a secure social sign-in flow and
+                bring you right back to the app.
               </p>
             </div>
           </div>
@@ -41,16 +44,45 @@ export default async function LoginPage({ params }) {
                 Login
               </span>
               <h2 className="mt-5 text-3xl font-semibold text-neutral-950">
-                Continue with Google
+                Choose a sign-in method
               </h2>
               <p className="mt-3 text-sm leading-6 text-neutral-600">
-                Use your Google account to sign in. New users can create their
-                profile after authentication.
+                Use Facebook or Google to sign in. New users can finish setting
+                up their profile after authentication.
               </p>
 
-              <div className="mt-8">
-                <GoogleLoginButton callbackUrl={callbackUrl} />
+              <div className="mt-8 space-y-3">
+                {enabledAuthProviders.facebook ? (
+                  <SocialLoginButton
+                    provider="facebook"
+                    callbackUrl={callbackUrl}
+                  />
+                ) : (
+                  <div className="rounded-2xl border border-dashed border-[#1877F2]/35 bg-[#1877F2]/6 px-5 py-4 text-sm text-neutral-700">
+                    <p className="font-semibold text-neutral-900">
+                      Facebook login is not enabled yet
+                    </p>
+                    <p className="mt-1 leading-6">
+                      Add <code>FACEBOOK_CLIENT_ID</code> and{" "}
+                      <code>FACEBOOK_CLIENT_SECRET</code> in{" "}
+                      <code>.env.local</code> to turn it on.
+                    </p>
+                  </div>
+                )}
+                <SocialLoginButton
+                  provider="google"
+                  callbackUrl={callbackUrl}
+                  disabled={!enabledAuthProviders.google}
+                  disabledLabel="Add Google app keys to enable this"
+                />
               </div>
+
+              {!hasAnySocialProvider ? (
+                <p className="mt-4 text-sm leading-6 text-amber-700">
+                  No social sign-in providers are configured yet. Add provider
+                  keys in <code>.env.local</code> to enable login.
+                </p>
+              ) : null}
 
               <p className="mt-6 text-sm text-neutral-600">
                 Don&apos;t have an account yet?{" "}

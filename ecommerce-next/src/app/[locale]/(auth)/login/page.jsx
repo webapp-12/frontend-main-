@@ -5,7 +5,7 @@ import { enabledAuthProviders } from "../../../../lib/auth";
 
 export default async function LoginPage({ params }) {
   const { locale } = await params;
-  const callbackUrl = `/${locale}/Home`;
+  const callbackUrl = `/${locale}/home`;
   const hasAnySocialProvider =
     enabledAuthProviders.facebook || enabledAuthProviders.google;
 

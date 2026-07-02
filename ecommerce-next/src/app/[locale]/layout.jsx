@@ -14,7 +14,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <div className="min-h-screen">
       {children}
-      <FloatingAssistant href={`/${locale}/account`} />
+      <FloatingAssistant locale={locale} />
     </div>
   );
 }

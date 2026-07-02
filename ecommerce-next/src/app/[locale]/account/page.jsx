@@ -16,7 +16,7 @@ export default async function AccountPage({ params }) {
 
   return (
     <main className="min-h-screen bg-[#f3f4f6]">
-      <Header />
+      <Header locale={locale} />
       <SecondNav locale={locale} />
 
       <section className="mx-auto max-w-7xl px-6 py-8">

@@ -38,7 +38,7 @@ export default async function HomePage({ params }) {
 
   return (
     <main className="min-h-screen bg-gray-200">
-      <Header />
+      <Header locale={locale} />
       <SecondNav locale={locale} />
 
       <HeroSection />

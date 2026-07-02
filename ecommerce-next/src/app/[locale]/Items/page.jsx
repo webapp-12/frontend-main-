@@ -27,7 +27,7 @@ export default async function GamingPage({ params, searchParams }) {
 
   return (
     <main className="min-h-screen bg-[#f7f1e3]">
-      <Header />
+      <Header locale={locale} />
       <SecondNav locale={locale} />
 
       <section className="mx-auto max-w-7xl px-6 py-8">

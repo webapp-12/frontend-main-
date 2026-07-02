@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import FloatingAssistant from "@/components/ui/FloatingAssistant";
+
 import { isSupportedLocale } from "../../lib/i18n";
 
 export default async function LocaleLayout({ children, params }) {
@@ -9,5 +11,10 @@ export default async function LocaleLayout({ children, params }) {
     notFound();
   }
 
-  return children;
+  return (
+    <div className="min-h-screen">
+      {children}
+      <FloatingAssistant href={`/${locale}/account`} />
+    </div>
+  );
 }

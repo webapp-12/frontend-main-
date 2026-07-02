@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { AllMenuDrawer } from "@/components/ui/AllMenuDrawer";
+import AllMenuDrawer from "@/components/ui/AllMenuDrawer";
 
 export default function SecondNav({ locale = "en" }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

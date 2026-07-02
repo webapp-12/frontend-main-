@@ -1,6 +1,8 @@
 import Header from "@/components/layout/Header";
 import HeroSection from "@/components/ui/HeroSection";
 import ProductCard from "@/components/ui/ProductCard";
+import SecondNav from "@/components/ui/SecondNav";
+
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -12,10 +14,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function HomePage({ params }) {
-  await params;
+  const { locale } = await params;
 
   const cards = [
-    { title: "Get your game on", img: "🎮", link: "Shop gaming" },
+    {
+      title: "Get your game on",
+      img: "🎮",
+      link: "Shop gaming",
+      href: `/${locale}/Items`,
+    },
     { title: "Shop Fashion for less", img: "👕", link: "See all deals" },
     {
       title: "Must-haves for every student",
@@ -32,6 +39,8 @@ export default async function HomePage({ params }) {
   return (
     <main className="min-h-screen bg-gray-200">
       <Header />
+      <SecondNav locale={locale} />
+
       <HeroSection />
 
       <section
@@ -44,6 +53,7 @@ export default async function HomePage({ params }) {
             title={card.title}
             img={card.img}
             link={card.link}
+            href={card.href}
           />
         ))}
       </section>

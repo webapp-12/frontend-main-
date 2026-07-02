@@ -49,6 +49,7 @@ export default function SecondNav({ locale = "en" }) {
       <AllMenuDrawer
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
+        locale={locale}
       />
     </>
   );

@@ -26,11 +26,11 @@ export default async function GamingPage({ params, searchParams }) {
   const category = resolvedSearchParams?.category;
 
   return (
-    <main className="min-h-screen bg-[#f7f1e3]">
+    <main className="min-h-screen bg-white">
       <Header locale={locale} />
       <SecondNav locale={locale} />
 
-      <section className="mx-auto max-w-7xl px-6 py-8">
+      <section className="mx-auto max-w-7xl bg-white px-6 py-8">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="text-3xl font-bold">{getPageTitle(category)}</h1>
           <SortDropdown />

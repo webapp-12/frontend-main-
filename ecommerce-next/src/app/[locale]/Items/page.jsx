@@ -42,7 +42,7 @@ export default async function GamingPage({ params, searchParams }) {
           </div>
 
           <div className="col-span-9">
-            <ProductGrid products={gamingProducts} />
+            <ProductGrid products={gamingProducts} locale={locale} />
           </div>
         </div>
       </section>

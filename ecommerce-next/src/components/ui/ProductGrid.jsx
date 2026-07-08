@@ -1,4 +1,6 @@
-export default function ProductGrid({ products, Products }) {
+import Link from "next/link";
+
+export default function ProductGrid({ products, Products, locale = "en" }) {
   const items = products ?? Products ?? [];
 
   if (!items.length) {
@@ -13,10 +15,11 @@ export default function ProductGrid({ products, Products }) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((product) => (
-        <article
+        <Link
           key={product.id}
+          href={`/${locale}/product/${product.id}`}
           className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg"
         >
           <div className="flex h-52 items-center justify-center bg-slate-100 p-6 text-7xl">
@@ -35,7 +38,7 @@ export default function ProductGrid({ products, Products }) {
               </span>
             </div>
           </div>
-        </article>
+        </Link>
       ))}
     </div>
   );

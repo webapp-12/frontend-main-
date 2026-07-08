@@ -117,6 +117,7 @@ export default function Header({ locale = "en" }) {
 
         <button
           type="button"
+          suppressHydrationWarning
           className="hidden shrink-0 items-center gap-2 rounded-md px-2 py-2 text-left transition hover:outline hover:outline-1 hover:outline-white lg:flex"
         >
           <PinIcon className="mt-2 h-5 w-5 shrink-0 text-white/80" />
@@ -129,6 +130,7 @@ export default function Header({ locale = "en" }) {
         <div className="mx-2 flex min-w-0 flex-1 items-center overflow-hidden rounded-xl border border-[#f3a847] bg-white">
           <button
             type="button"
+            suppressHydrationWarning
             className="hidden h-12 shrink-0 items-center gap-1 border-r border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 md:flex"
           >
             <span>All</span>
@@ -138,11 +140,13 @@ export default function Header({ locale = "en" }) {
           <input
             type="text"
             placeholder="Search products..."
+            suppressHydrationWarning
             className="h-12 min-w-0 flex-1 border-0 px-4 text-base text-slate-900 outline-none"
           />
 
           <button
             type="button"
+            suppressHydrationWarning
             className="flex h-12 w-14 shrink-0 items-center justify-center bg-[#f3a847] text-slate-900 transition hover:bg-[#f0c14b]"
             aria-label="Search"
           >
@@ -152,6 +156,7 @@ export default function Header({ locale = "en" }) {
 
         <button
           type="button"
+          suppressHydrationWarning
           className="hidden shrink-0 items-center gap-1 rounded-md px-2 py-2 transition hover:outline hover:outline-1 hover:outline-white lg:flex"
           aria-label="Choose language"
         >

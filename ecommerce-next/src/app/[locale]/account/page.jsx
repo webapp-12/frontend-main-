@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import SecondNav from "@/components/ui/SecondNav";
 import { accountItems } from "@/data/accountItems";
+import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -46,12 +47,21 @@ export default async function AccountPage({ params }) {
               </h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">{item.desc}</p>
 
-              <button
-                type="button"
-                className="mt-5 inline-flex rounded-full bg-[#232f3e] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#131921]"
-              >
-                Open
-              </button>
+              {item.title === "Your business account" ? (
+                <Link
+                  href={`/${locale}/business/register`}
+                  className="mt-5 inline-flex rounded-full bg-[#232f3e] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#131921]"
+                >
+                  Open
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className="mt-5 inline-flex rounded-full bg-[#232f3e] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#131921]"
+                >
+                  Open
+                </button>
+              )}
             </article>
           ))}
         </div>

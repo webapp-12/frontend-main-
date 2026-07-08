@@ -15,6 +15,18 @@ export async function generateMetadata({ params }) {
 export default async function AccountPage({ params }) {
   const { locale } = await params;
 
+  function getAccountHref(title) {
+    if (title === "Your business account") {
+      return `/${locale}/business/register`;
+    }
+
+    if (title === "Your Amazon Family") {
+      return `/${locale}/post/myAdsDashboard`;
+    }
+
+    return null;
+  }
+
   return (
     <main className="min-h-screen bg-[#f3f4f6]">
       <Header locale={locale} />
@@ -47,9 +59,9 @@ export default async function AccountPage({ params }) {
               </h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">{item.desc}</p>
 
-              {item.title === "Your business account" ? (
+              {getAccountHref(item.title) ? (
                 <Link
-                  href={`/${locale}/business/register`}
+                  href={getAccountHref(item.title)}
                   className="mt-5 inline-flex rounded-full bg-[#232f3e] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#131921]"
                 >
                   Open

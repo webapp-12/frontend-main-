@@ -34,7 +34,7 @@ export default async function BusinessSuccessPage({ params }) {
             href={`/${locale}/business/dashboard`}
             className="mt-8 inline-flex rounded-full bg-[#232f3e] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#131921]"
           >
-            Go to Dashboard
+            Go to Business Dashboard
           </Link>
         </div>
       </section>

@@ -20,7 +20,7 @@ export default async function MyAdsDashboardPage({ params }) {
       <SecondNav locale={locale} />
 
       <section className="mx-auto max-w-7xl px-6 py-8">
-        <MyAdsDashboard />
+        <MyAdsDashboard locale={locale} />
       </section>
     </main>
   );

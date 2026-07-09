@@ -30,3 +30,5 @@ export const dashbordProducts = [
     image: "product1",
   },
 ]
+
+export const dashboardProducts = dashbordProducts;

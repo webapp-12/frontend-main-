@@ -1,16 +1,15 @@
+import Header from "@/components/layout/Header";
+import SecondNav from "@/components/ui/SecondNav";
 import ProductDetailsPage from "@/components/ui/product/ProductDetailsPage";
-
-export async function generateMetadata({ params }) {
-  const { locale } = await params;
-
-  return {
-    title: `Product Details | ${locale.toUpperCase()} | Ecommerce Next`,
-    description: `View product details in the ${locale.toUpperCase()} storefront.`,
-  };
-}
 
 export default async function Page({ params }) {
   const { locale } = await params;
 
-  return <ProductDetailsPage locale={locale} />;
+  return (
+    <main className="min-h-screen bg-[#eff0f5]">
+      <Header locale={locale} />
+      <SecondNav locale={locale} />
+      <ProductDetailsPage />
+    </main>
+  );
 }

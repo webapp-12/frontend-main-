@@ -17,7 +17,7 @@ export default function AllMenuDrawer({ open, onClose, locale = "en" }) {
         <div className="flex items-center justify-between bg-[#232f3e] px-6 py-4 text-white">
           <div className="flex items-center gap-3 text-2xl font-bold">
             <UserCircleIcon className="h-[30px] w-[30px]" />
-            <span>Hello, ghg</span>
+            <span>Hello, Dunith</span>
           </div>
 
           <button
@@ -38,16 +38,7 @@ export default function AllMenuDrawer({ open, onClose, locale = "en" }) {
         <MenuSection
           title="Digital Content & Devices"
           items={[
-            "Prime Video",
-            "Amazon Music",
-            "Echo & Alexa",
-            "Fire Tablets",
-            "Fire TV",
-            "Amazon Luna",
-            "Kindle E-readers & Books",
-            "Audible Books & Originals",
-            "Amazon Photos",
-            "Amazon Appstore",
+           
           ]}
           arrow
         />
@@ -72,9 +63,9 @@ export default function AllMenuDrawer({ open, onClose, locale = "en" }) {
           title="Programs & Features"
           items={[
             "Medical Care & Pharmacy",
-            "Amazon Haul",
-            "Amazon Business",
-            "Sell on Amazon",
+            "Finder Haul",
+            "Finder Business",
+            "Sell on Finder",
           ]}
           arrow
         />

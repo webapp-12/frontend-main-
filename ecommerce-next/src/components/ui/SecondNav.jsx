@@ -13,8 +13,6 @@ export default function SecondNav({ locale = "en" }) {
     { name: "Gaming", href: `/${locale}/Items?category=gaming` },
     { name: "Fashion", href: `/${locale}/Items?category=fashion` },
     { name: "Same-Day Delivery", href: `/${locale}/Items` },
-    { name: "Amazon Haul", href: `/${locale}/Items` },
-    { name: "Prime Video", href: `/${locale}/Items` },
     { name: "Groceries", href: `/${locale}/Items` },
     { name: "Buy Again", href: `/${locale}/Items` },
   ];
@@ -26,6 +24,7 @@ export default function SecondNav({ locale = "en" }) {
           <button
             type="button"
             onClick={() => setIsDrawerOpen(true)}
+            suppressHydrationWarning
             className="flex items-center gap-2 rounded px-2 py-1 font-semibold hover:outline hover:outline-1 hover:outline-white"
             aria-expanded={isDrawerOpen}
             aria-label="Open all menu"

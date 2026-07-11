@@ -1,7 +1,16 @@
+import finderBanner from "@/assets/homebanner/FINDER.png";
+
 export default function HeroSection() {
   return (
-    <section className="bg-[linear-gradient(135deg,#131921_0%,#1f2937_55%,#374151_100%)] text-white">
-      <div className="mx-auto flex min-h-[320px] max-w-7xl flex-col justify-center px-6 py-16">
+    <section
+      className="relative overflow-hidden text-white"
+      style={{
+        backgroundImage: `linear-gradient(90deg, rgba(19, 25, 33, 0.92) 0%, rgba(19, 25, 33, 0.78) 35%, rgba(19, 25, 33, 0.38) 62%, rgba(19, 25, 33, 0.12) 100%), url(${finderBanner.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="mx-auto flex min-h-[420px] max-w-7xl flex-col justify-center px-6 py-16">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-300">
           Back to school picks
         </p>

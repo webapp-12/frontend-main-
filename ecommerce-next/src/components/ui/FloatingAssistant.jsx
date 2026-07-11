@@ -74,6 +74,7 @@ export default function FloatingAssistant({ locale = "en" }) {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
               className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
               aria-label="Close assistant"
             >
@@ -98,6 +99,7 @@ export default function FloatingAssistant({ locale = "en" }) {
       <button
         type="button"
         onClick={() => setIsOpen((current) => !current)}
+        suppressHydrationWarning
         className="group relative"
         aria-expanded={isOpen}
         aria-label="Open help assistant"

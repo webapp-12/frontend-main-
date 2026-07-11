@@ -39,9 +39,11 @@ export default async function BusinessDashboardPage({ params }) {
 }
 
 function Card({ title, text, href }) {
+  const safeHref = typeof href === "string" ? href : "/en/business";
+
   return (
     <Link
-      href={href}
+      href={safeHref}
       className="rounded-3xl bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <h2 className="mb-2 text-xl font-bold">{title}</h2>

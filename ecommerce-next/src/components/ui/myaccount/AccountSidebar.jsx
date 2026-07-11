@@ -72,11 +72,12 @@ export default function AccountSidebar({ locale = "en" }) {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden min-h-screen w-64 bg-[#f2f3f5] p-4 lg:block">
-      <div className="space-y-2">
+    <aside className="hidden h-fit w-64 shrink-0 rounded-2xl bg-[#f2f3f5] p-4 lg:block">
+      <nav className="space-y-2">
         {menu.map((item) => {
           const Icon = item.icon;
           const href = `/${locale}${item.path}`;
+
           const isActive =
             item.path === "/account"
               ? pathname === href
@@ -86,18 +87,18 @@ export default function AccountSidebar({ locale = "en" }) {
             <Link
               key={item.title}
               href={href}
-              className={`flex items-center gap-3 rounded-lg px-4 py-3 transition-all ${
+              className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-base transition ${
                 isActive
                   ? "bg-white font-bold text-black shadow-sm"
-                  : "text-gray-700 hover:bg-white hover:shadow-sm"
+                  : "text-slate-700 hover:bg-white hover:shadow-sm"
               }`}
             >
-              <Icon size={20} />
+              <Icon size={21} strokeWidth={2} />
               <span>{item.title}</span>
             </Link>
           );
         })}
-      </div>
+      </nav>
     </aside>
   );
 }

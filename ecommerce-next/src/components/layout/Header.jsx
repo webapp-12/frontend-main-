@@ -16,12 +16,12 @@ export default function Header({ locale = "en" }) {
 
         {/* Logo */}
         <Link href={`${basePath}/home`} className="text-3xl font-bold whitespace-nowrap">
-          shop<span className="text-orange-400">zone</span>
+          fin<span className="text-orange-400">der</span>
         </Link>
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-6 text-sm">
-          <Link href={`${basePath}/Items`}>Today's Deals</Link>
+          <Link href={`${basePath}/Items`}>Today&apos;s Deals</Link>
           <Link href={`${basePath}/Items?category=gaming`}>Gaming</Link>
           <Link href={`${basePath}/Items?category=fashion`}>Fashion</Link>
         </nav>
@@ -37,6 +37,7 @@ export default function Header({ locale = "en" }) {
             <input
               type="text"
               placeholder="Search products..."
+              suppressHydrationWarning
               className="w-full rounded-full bg-white text-black pl-12 pr-5 py-3 outline-none focus:ring-2 focus:ring-orange-400"
             />
           </div>
@@ -46,7 +47,10 @@ export default function Header({ locale = "en" }) {
         <div className="flex items-center gap-8 whitespace-nowrap">
 
           {/* Language */}
-          <button className="hidden lg:flex items-center gap-2 hover:text-orange-300">
+          <button
+            suppressHydrationWarning
+            className="hidden lg:flex items-center gap-2 hover:text-orange-300"
+          >
             <span className="text-xl">🇺🇸</span>
 
             <span className="font-semibold">
@@ -59,9 +63,9 @@ export default function Header({ locale = "en" }) {
           {/* Account */}
           <Link
             href={`${basePath}/account`}
-            className="leading-tight hover:text-orange-300"
+            className="flex flex-col leading-tight hover:text-orange-300"
           >
-            <p className="text-xs">Hello, ghg</p>
+            <span className="text-xs">Hello, ghg</span>
 
             <div className="flex items-center gap-1 font-bold">
               <span>Account & Lists</span>
@@ -72,10 +76,10 @@ export default function Header({ locale = "en" }) {
           {/* Orders */}
           <Link
             href={`${basePath}/orders`}
-            className="leading-tight hover:text-orange-300"
+            className="flex flex-col leading-tight hover:text-orange-300"
           >
-            <p className="text-xs">Returns</p>
-            <p className="font-bold">& Orders</p>
+            <span className="text-xs">Returns</span>
+            <span className="font-bold">& Orders</span>
           </Link>
 
           {/* Cart */}
@@ -95,6 +99,26 @@ export default function Header({ locale = "en" }) {
               Cart
             </span>
           </Link>
+
+          <button suppressHydrationWarning className="rounded-xl
+    bg-gradient-to-r
+    from-orange-500
+    to-amber-500
+    px-7
+    py-3
+    text-sm
+    font-bold
+    text-white
+    shadow-lg
+    transition-all
+    duration-300
+    hover:from-orange-600
+    hover:to-amber-600
+    hover:shadow-2xl
+    hover:scale-105
+    active:scale-95 ">
+            Post Your Ads
+          </button>
 
         </div>
 

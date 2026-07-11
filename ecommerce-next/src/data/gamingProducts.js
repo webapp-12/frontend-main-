@@ -1,3 +1,6 @@
+import mouse from "@/assets/Products/gameing/mouse.png"
+
+
 export const gamingProducts = [
   {
     id: 1,
@@ -6,7 +9,7 @@ export const gamingProducts = [
     description: "Precision wireless controller with textured grips and fast triggers.",
     price: "79.99",
     badge: "Best Seller",
-    image: "PS",
+    image: mouse,
   },
   {
     id: 2,
